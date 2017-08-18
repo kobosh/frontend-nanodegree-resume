@@ -11,11 +11,22 @@ Cameron Pittman
 /*
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
+
+ src="http://maps.googleapis.com/maps/api/js?
+ libraries=places&key=[AIzaSyC946HcUUdAhqNdMDU6i903H0L8d3vNOlc]">
 */
+
+
+ var address='6014 Winsome ln Houston Texas 77057';
+ var mesg='here is what I got to say \n'+
+ ' here is what I got to say \n here is what I got to say \n '+
+ 'here is what I got to say ';
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
+var HTMLcontactGeneric =
+'<li class="flex-item"><span class="orange-text">%contact%</span>'+
+'<span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
 var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
 var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
@@ -26,7 +37,8 @@ var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</sp
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-column"></ul>';
+var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3>'+
+'<ul id="skills" class="flex-column"></ul>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
@@ -71,7 +83,8 @@ $(document).ready(function() {
 });
 
 /*
-The next few lines about clicks are for the Collecting Click Locations quiz in the lesson Flow Control from JavaScript Basics.
+The next few lines about clicks are for the Collecting Click Locations
+ quiz in the lesson Flow Control from JavaScript Basics.
 */
 var clickLocations = [];
 
@@ -208,6 +221,7 @@ function initializeMap() {
     // creates a Google place search service object. PlacesService does the work of
     // actually searching for location data.
     var service = new google.maps.places.PlacesService(map);
+    console.log("search "+service);
 
     // Iterates through the array of locations, creates a search object for each location
       locations.forEach(function(place){
@@ -239,11 +253,19 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+ map.fitBounds(mapBounds);
+});
+/*social media*/
+var HTMLfacebook='<a href="%data%" class="fa fa-facebook"></a>';
+var HTMLtwitter='<a href="%data%" class="fa fa-twitter"></a>';
+
+var HTMLlinkedin='<a href="%data%" class="fa fa-linkedin"></a>';
+
+var HTMLskype='<a href="%data%" class="fa fa-skype"></a>';
+
