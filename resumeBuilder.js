@@ -1,3 +1,14 @@
+// Hello.
+//
+// This is JSHint, a tool that helps to detect errors and potential
+// problems in your JavaScript code.
+//
+// To start, simply enter some JavaScript anywhere on this page. Your
+// report will appear on the right side.
+//
+// Additionally, you can toggle specific options in the Configure
+// menu.
+
     /*
     This is empty on purpose! Your code to build the resume will go here.
     */
@@ -123,7 +134,8 @@ display: function ()
          jbs+=HTMLworkEmployer.replace("%data%", job.employer)+
          HTMLworkTitle.replace("%data%",job.title)+
          HTMLworkLocation.replace("%data%",job.location)+
-         HTMLworkDates.replace("%data%",job.dates) +HTMLworkDescription.replace("%data%",job.description)
+         HTMLworkDates.replace("%data%",job.dates) +
+           HTMLworkDescription.replace("%data%",job.description);
 
         }
         );
@@ -148,7 +160,7 @@ var projects={
                 projs+=HTMLprojectTitle.replace("%data%", prj.title)+
                 HTMLprojectDates.replace("%data%",prj.dates)+
                 HTMLprojectDescription.replace("%data%",prj.description)+
-                HTMLprojectImage.replace("%data%",prj.images)
+                HTMLprojectImage.replace("%data%",prj.images);
 
             } );
         return projs;
@@ -164,7 +176,7 @@ var socialMedia=
      var soc=HTMLfacebook+HTMLtwitter+HTMLlinkedin;
      return soc;
  }
-}
+};
 //  the header part of resume
 bio.display();
 //the rest parts of resume
