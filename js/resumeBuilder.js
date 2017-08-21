@@ -1,3 +1,14 @@
+// Hello.
+//
+// This is JSHint, a tool that helps to detect errors and potential
+// problems in your JavaScript code.
+//
+// To start, simply enter some JavaScript anywhere on this page. Your
+// report will appear on the right side.
+//
+// Additionally, you can toggle specific options in the Configure
+// menu.
+
     /*
     This is empty on purpose! Your code to build the resume will go here.
     */
@@ -45,7 +56,7 @@
 
   }
 
-}
+};
 
 
 /* education*/
@@ -55,20 +66,17 @@ var education=
 {
 
     schools:
-    [
-    {
+    [    {
      name: "UMES",
      location: "Princess Anne MD",
      degree: "MS",
      majors: "Computer Science",
      dates: "1999-2003",
      url: "https://umes.edu"
- }
- ]
- ,
+ } ],
+
  onlineCourses:
- [
- {
+ [ {
      title: "Algorithms",
      school: "San Diego UCL",
      dates:"3/2016-6/2016",
@@ -79,29 +87,25 @@ var education=
      school: "Udacity",
      dates:"6/2017-present",
      url: "Udacity.com"
- }
- ],
+ } ],
 
  display: function (){
     var schoolStr=HTMLschoolStart;
     var onlines=HTMLonlineClasses;
     education.schools.forEach(function(schl)
     {
-        schoolStr+=HTMLschoolName.replace("%data%",schl.name)
-        + HTMLschoolDegree.replace("%data%",schl.degree)
-        + HTMLschoolDates.replace("%data%",schl.dates)
-        + HTMLschoolLocation.replace("%data%",schl.location)
+        schoolStr+=HTMLschoolName.replace("%data%",schl.name) +
+        HTMLschoolDegree.replace("%data%",schl.degree) +
+         HTMLschoolDates.replace("%data%",schl.dates)+
+          HTMLschoolLocation.replace("%data%",schl.location)+ HTMLschoolMajor.replace("%data%",schl.majors);
 
-        + HTMLschoolMajor.replace("%data%",schl.majors);
-              //+ HTMLschoolUrl.replace("%data%",schl.url);
           });
         //schoolStr+=HTMLonlineClasses;
         education.onlineCourses.forEach(function(onln)
         {
-         onlines+=HTMLonlineTitle.replace("%data%",onln.title)
-         + HTMLonlineSchool.replace("%data%",onln.school)
-         + HTMLonlineDates.replace("%data%",onln.dates)
-         +HTMLonlineURL.replace("%data%",onln.url);
+         onlines+=HTMLonlineTitle.replace("%data%",onln.title) +
+          HTMLonlineSchool.replace("%data%",onln.school)+
+           HTMLonlineDates.replace("%data%",onln.dates) +HTMLonlineURL.replace("%data%",onln.url);
 
      }
      );
@@ -115,25 +119,23 @@ var education=
 //work experience
 var work={
 
-    jobs: [
-    { employer: "PTGi",
+    jobs: [    { employer: "PTGi",
     title: "Software Developer",
     location: "Herndon VA",
     dates: "4/2007-12/2012",
     description: "developed .Net Apps"
-}
-],
+}],
 display: function ()
 {
     var jbs=HTMLworkStart;
     work.jobs.forEach(
         function(job)
         {
-            jbs+=HTMLworkEmployer.replace("%data%", job.employer)
-            +HTMLworkTitle.replace("%data%",job.title)
-            +HTMLworkLocation.replace("%data%",job.location)
-            +HTMLworkDates.replace("%data%",job.dates)
-            +HTMLworkDescription.replace("%data%",job.description)
+         jbs+=HTMLworkEmployer.replace("%data%", job.employer)+
+         HTMLworkTitle.replace("%data%",job.title)+
+         HTMLworkLocation.replace("%data%",job.location)+
+         HTMLworkDates.replace("%data%",job.dates) +
+           HTMLworkDescription.replace("%data%",job.description);
 
         }
         );
@@ -143,26 +145,24 @@ display: function ()
 //projects
 var projects={
 
-    projects: [
-    {
+    projects: [    {
         title: "Domestic USA Routes",
         dates: "2/2008-9/2008",
         description: " route calls for each area code",
         images: "images/fry.jpg"
-    }
-    ],
+    }    ],
+
     display: function (){
         var projs=HTMLprojectStart;
         projects.projects.forEach(
             function(prj)
             {
-                projs+=HTMLprojectTitle.replace("%data%", prj.title)
-                +HTMLprojectDates.replace("%data%",prj.dates)
-                +HTMLprojectDescription.replace("%data%",prj.description)
-                +HTMLprojectImage.replace("%data%",prj.images)
+                projs+=HTMLprojectTitle.replace("%data%", prj.title)+
+                HTMLprojectDates.replace("%data%",prj.dates)+
+                HTMLprojectDescription.replace("%data%",prj.description)+
+                HTMLprojectImage.replace("%data%",prj.images);
 
-            }
-            );
+            } );
         return projs;
     }
 };
@@ -176,7 +176,7 @@ var socialMedia=
      var soc=HTMLfacebook+HTMLtwitter+HTMLlinkedin;
      return soc;
  }
-}
+};
 //  the header part of resume
 bio.display();
 //the rest parts of resume
